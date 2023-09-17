@@ -6,7 +6,8 @@ import Services from "./components/Services";
 import Errof from "./components/Errorf";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Customers from "./components/Customers";
-import { useEffect } from "react";
+
+import Customer from "./components/Customer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/customers/:id" element={<Customer />} />
           <Route path="*" element={<Errof />} />
         </Routes>
       </Test>

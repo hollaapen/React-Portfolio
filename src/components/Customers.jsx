@@ -1,13 +1,14 @@
 import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Customers() {
   const [customers, setCustomers] = useState();
   useEffect(() => {
-    fetch("http://localhost:8000/")
+    fetch("http://localhost:8000/api/customers")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setCustomers(data.customers);
       });
 
@@ -20,8 +21,10 @@ export default function Customers() {
 
         <div class="grid grid-cols-3">
           {customers
-            ? customers.map((person) => {
-                return <p>{person.name}</p>;
+            ? customers.map((customer) => {
+                return (
+                  <Link to={"/customers/" + customer.id}>{customer.name}</Link>
+                );
               })
             : null}
         </div>
