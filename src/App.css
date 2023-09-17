@@ -2,5 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html[data-theme="dark"] {
+
+
+
+#one{
+	background-image: url('');
 }
